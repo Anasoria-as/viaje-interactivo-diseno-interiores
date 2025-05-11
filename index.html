@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viaje Interactivo por el Diseño de Interiores | Ana Soria</title>
+
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+ <!-- 3D -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+  <!-- GSAP con ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <section class="panel one">
+      <img src="/assets/svg/diseño de interiores titulo.svg" alt="Diseño de interiores" class="titulo-svg" />
+      <img src="/assets/img/vitrina colorida.png" class="decor decor-vitrina" style="width: 50rem;" alt="Vitrina colorida">
+      <img src="/assets/img/ikea lamp.png" class="decor decor-ikea" style="width: 18rem;" alt="Lámpara Ikea">
+      <img src="/assets/img/lampara papel.webp" class="decor decor-papel lamp" style="width: 25rem;" alt="Lámpara papel">
+      <img src="/assets/img/mesa tulipa.png" class="decor decor-tulipa lamp" style="width: 27rem;" alt="Mesa Tulipa">
+      <img src="/assets/img/cubo.png" class="decor decor-cubo" style="width: 27rem;" alt="Cubo">
+      <img src="/assets/img/spiral stant.png" class="decor decor-spiral lamp" style="width: 27rem;" alt="Spiral stant">
+      <img src="/assets/img/mesa auxiliar.png" class="decor decor-auxiliar" style="width: 50rem;" alt="Mesa auxiliar">
+    </section>
+
+    <section class="panel two">
+      <h2 class="section-title">Máquina del tiempo</h2>
+      <img src="/assets/img/lampara PH5.webp" class="decor decor-ph5 lamp" style="width: 25rem;" alt="Lampara ph5">
+            <img src="/assets/img/dot pattern.png" class="decor decor-dot lamp" style="width: 25rem;" alt="dot pattern">
+      <img src="/assets/img/lampara de pie.png" class="decor decor-lamppie" style="width: 50rem;" alt="lampara de pie">
+      <img src="/assets/img/Shell Chair CH07.png" class="decor decor-ch07" style="width: 35rem;" alt="Shell Chair CH07">
+      <img src="/assets/img/Noguchi Coffee Table.png" class="decor decor-noguchi" style="width: 31rem;" alt="Noguchi Coffee Table">
+      <img src="/assets/img/Butterfly Stool.png" class="decor decor-butterfly lamp" style="width: 25rem;" alt="Butterfly Stool">
+    </section>
+
+    <section class="panel three">
+      <h2 class="section-title">Estilos Decorativos</h2>
+      <img src="/assets/img/alfombra.png" class="decor decor-alfombra lamp" style="width: 30rem;" alt="alfombra">
+      <img src="/assets/img/locker.png" class="decor decor-locker lamp" style="width: 30rem;" alt="locker">
+      <img src="/assets/img/lampara seta.png" class="decor decor-seta" style="width: 20rem;" alt="Lámpara seta">
+      <img src="/assets/img/mesa aux rosa.png" class="decor decor-auxrosa" style="width: 15rem;" alt="Mesa auxiliar rosa">
+      <img src="/assets/img/togo sofa.png" class="decor decor-togo lamp" style="width: 30rem;" alt="togo sofa">
+      <img src="/assets/img/lampara amarilla.png" class="decor decor-lampamarilla lamp" style="width: 20rem;" alt="lampara amarilla">
+    </section>
+
+    <section class="panel four">
+      <h2 class="section-title">Clásicos del diseño</h2>
+            <img src="/assets/img/Alexander Calder 1967.png" class="decor decor-calder lamp" style="width: 30rem;" alt="Movil Alexander Calder">
+      <img src="/assets/img/Componibili.png" class="decor decor-componibili lamp" style="width: 20rem;" alt="Componibili">
+      <img src="/assets/img/poster bauhaus.jpg" class="decor decor-bauhaus lamp" style="width: 16rem;" alt="Poster bauhaus">
+      <img src="/assets/img/Silla Panton.png" class="decor decor-panton" style="width: 40rem;" alt="Silla Panton">
+      <img src="/assets/img/Eames House Bird.png" class="decor decor-bird lamp" style="width: 10rem;" alt="Eames House Bird">
+      <img src="/assets/img/Lounge Chair.png" class="decor decor-lounge" style="width: 45rem;" alt="Lounge Chair">
+    </section>
+  </div>
+
+  <!-- POPUP: Maquina del tiempo -->
+  <div id="popup-1980" class="popup-overlay">
+    <div class="popup-content-one">
+      <!-- 1980 -->
+      <h2 class="popup-title-one">1980</h2>
+      <img src="/assets/img/1980.jpg" alt="Maquina del tiempo" class="popup-image">
+      <div class="timeline-svg-container"></div>
+
+      <div class="arrows">
+        <!-- Flecha Izquierda -->
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+
+        <!-- Flecha Derecha -->
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <!-- Botón cerrar -->
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 1950 -->
+  <div id="popup-1950" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">1950</h2>
+      <img src="/assets/img/1950.jpg" alt="1950" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 1960 -->
+  <div id="popup-1960" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">1960</h2>
+      <img src="/assets/img/1960.jpg" alt="1960" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 1970 -->
+  <div id="popup-1970" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">1970</h2>
+      <img src="/assets/img/1970.jpg" alt="Maquina del tiempo 1970" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 1990 -->
+  <div id="popup-1990" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">1990</h2>
+      <img src="/assets/img/1990.jpg" alt="Maquina del tiempo 1990" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- 2020 -->
+  <div id="popup-2020" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">2020</h2>
+      <img src="/assets/img/2020.jpg" alt="2020" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- FUTURO? -->
+  <div id="popup-futuro" class="popup-overlay hidden">
+    <div class="popup-content-one">
+      <h2 class="popup-title-one">¿Futuro?</h2>
+      <img src="/assets/img/futuro.jpg" alt="¿Futuro?" class="popup-image">
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- POPUP: Estilos Decorativos -->
+   <!-- DOPAMINE -->
+    <div id="popup-dopamine" class="popup-overlay">
+      <div class="popup-content-one">
+
+        <h2 class="popup-title-two">Dopamine Decor</h2>
+        <img src="/assets/img/dopamine.jpg" alt="Estilos Decorativos" class="popup-image">
+
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+
+      </div>
+    </div>
+
+    <!-- DOPAMINE COLLAGE -->
+    <div id="popup-dopamine-collage" class="popup-overlay hidden">
+      <div class="popup-content-one">
+        <h2 class="popup-title-two">Dopamine Decor</h2>
+        <img src="/assets/img/dopamine_collage.jpg" alt="Estilos Decorativos" class="popup-image">
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+      </div>
+    </div>
+    <!-- JAPANDI -->
+    <div id="popup-japandi" class="popup-overlay hidden">
+      <div class="popup-content-one">
+        <h2 class="popup-title-two quincento">Japandi</h2>
+        <img src="/assets/img/japandi.jpg" alt="Japandi" class="popup-image">
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+      </div>
+    </div>
+
+    <!-- JAPANDI COLLAGE -->
+    <div id="popup-japandi-collage" class="popup-overlay hidden">
+      <div class="popup-content-one">
+        <h2 class="popup-title-two quincento">Japandi</h2>
+        <img src="/assets/img/japandi_collage.jpg" alt="Japandi Collage" class="popup-image">
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+      </div>
+    </div>
+
+    <!-- NÓRDICO -->
+    <div id="popup-nordico" class="popup-overlay hidden">
+      <div class="popup-content-one">
+        <h2 class="popup-title-two bellota">Nórdico</h2>
+        <img src="/assets/img/nordico.jpg" alt="Nórdico" class="popup-image">
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+      </div>
+    </div>
+
+    <!-- NÓRDICO COLLAGE -->
+    <div id="popup-nordico-collage" class="popup-overlay hidden">
+      <div class="popup-content-one">
+        <h2 class="popup-title-two bellota">Nórdico</h2>
+        <img src="/assets/img/nordico_collage.jpg" alt="Nórdico Collage" class="popup-image">
+        <div class="arrows">
+          <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+          <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+        </div>
+        <button class="close-btn">
+          <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+        </button>
+      </div>
+    </div>
+
+  <!-- POPUP: Clásicos del Diseño -->
+     <!-- PANTON -->
+  <div id="popup-panton" class="popup-overlay">
+    <div class="popup-content-two">
+
+      <div class="popup-two-content">
+        <div class="popup-text-container">
+          <h2 class="popup-title">Silla Panton</h2>
+          <p><strong>Diseñador:</strong> Verner Panton</p>
+          <p><strong>Año:</strong> 1960 (producida en 1967)</p>
+          <p>La primera silla de plástico moldeado de una sola pieza. Su forma escultural la hace única.</p>
+          <p>Clásico del diseño pop, aún se fabrica en varios colores.</p>
+        </div>
+
+        <div class="popup-image-container">
+          <model-viewer
+            src="/assets/glb/silla-panton.glb"
+            alt="Silla Panton 3D"
+            auto-rotate
+            camera-controls
+            disable-zoom
+            style="width: 100%; height: 500px;">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+
+    </div>
+  </div>
+  <!-- TULIP -->
+  <div id="popup-tulip" class="popup-overlay hidden">
+    <div class="popup-content-two">
+      <div class="popup-two-content">
+        <div class="popup-text-container">
+          <h2 class="popup-title">Mesa Tulip</h2>
+          <p><strong>Diseñador:</strong> Eero Saarinen</p>
+          <p><strong>Año:</strong> 1956</p>
+          <p>Parte de la colección Pedestal, creada para eliminar el “caos de patas” de las mesas tradicionales.</p>
+          <p>Clásico del diseño moderno, usada tanto en comedores como en oficinas contemporáneas.</p>
+        </div>
+  
+        <div class="popup-image-container">
+            <model-viewer
+              src="/assets/glb/mesa-tulip.glb"
+              alt="Silla Panton 3D"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 100%; height: 500px;">
+            </model-viewer>
+        </div>
+      </div>
+  
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+  
+  <!-- WIRE -->
+  <div id="popup-wire" class="popup-overlay hidden">
+    <div class="popup-content-two">
+      <div class="popup-two-content">
+        <div class="popup-text-container">
+          <h2 class="popup-title">Silla Wire DKR</h2>
+          <p><strong>Diseñador:</strong> Charles y Ray Eames</p>
+          <p><strong>Año:</strong> 1951</p>
+          <p>Silla icónica con estructura de alambre de acero moldeado que combina transparencia visual con estabilidad estructural.</p>
+          <p>Diseñada por Charles y Ray Eames en 1951, es un clásico del diseño mid-century que sigue presente en espacios contemporáneos.</p>
+        </div>
+  
+        <div class="popup-image-container">
+            <model-viewer
+              src="/assets/glb/silla-wire.glb"
+              alt="Silla Wire 3D"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 100%; height: 500px;">
+            </model-viewer>
+        </div>
+      </div>
+  
+      <div class="arrows">
+        <img src="/assets/svg/flecha-izq.svg" alt="Flecha izquierda" class="arrow arrow-left" />
+        <img src="/assets/svg/flecha-drcha.svg" alt="Flecha derecha" class="arrow arrow-right" />
+      </div>
+      <button class="close-btn">
+        <img src="/assets/svg/cerrar.svg" alt="Cerrar" class="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/script.js"></script>
+
+</body>
+</html>
