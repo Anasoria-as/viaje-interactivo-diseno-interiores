@@ -188,10 +188,10 @@ let lastX = 0;
     const deltaX = e.clientX - lastX;
 
     if (deltaX < -5 && currentCursor !== "left") {
-      document.body.style.cursor = 'url("/assets/svg/cursor-izq.png") 0 0, auto';
+      document.body.style.cursor = 'url("assets/svg/cursor-izq.png") 0 0, auto';
       currentCursor = "left";
     } else if (deltaX > 5 && currentCursor !== "right") {
-      document.body.style.cursor = 'url("/assets/svg/cursor-dch.png") 0 0, auto';
+      document.body.style.cursor = 'url("assets/svg/cursor-dch.png") 0 0, auto';
       currentCursor = "right";
     }
 
@@ -204,11 +204,11 @@ let lastX = 0;
 window.addEventListener("wheel", (e) => {
   if (e.deltaY < -5 && currentScrollCursor !== "left") {
     // Scroll hacia ARRIBA → la web va hacia la derecha → flecha izquierda
-    document.body.style.cursor = 'url("/assets/svg/cursor-izq.png") 0 0, auto';
+    document.body.style.cursor = 'url("assets/svg/cursor-izq.png") 0 0, auto';
     currentScrollCursor = "left";
   } else if (e.deltaY > 5 && currentScrollCursor !== "right") {
     // Scroll hacia ABAJO → la web va hacia la izquierda → flecha derecha
-    document.body.style.cursor = 'url("/assets/svg/cursor-dch.png") 0 0, auto';
+    document.body.style.cursor = 'url("assets/svg/cursor-dch.png") 0 0, auto';
     currentScrollCursor = "right";
   }
 });

@@ -2,21 +2,21 @@
 
 @font-face {
   font-family: "Richard Samuels";
-  src: url("/assets/fonts/Richard\ Samuels.otf") format("opentype");
+  src: url("assets/fonts/Richard\ Samuels.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Quincento";
-  src: url("/assets/fonts/Quincento D.otf") format("opentype");
+  src: url("assets/fonts/Quincento D.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Bellota";
-  src: url("/assets/fonts/Bellota-Regular.ttf") format("truetype");
+  src: url("assets/fonts/Bellota-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -54,7 +54,7 @@ body {
   font-family:  var(--font-anonymous);
   font-weight: 400;
   font-style: normal;
-  cursor: url("/assets/svg/cursor-dch.png") 0 0, auto;
+  cursor: url("assets/svg/cursor-dch.png") 0 0, auto;
   background-color: var(--color-bg-light);
 }
 
@@ -425,7 +425,7 @@ button,
 .arrow,
 .close-icon,
 .close-btn {
-  cursor: url("/assets/svg/pointer.png") 20 20, pointer;
+  cursor: url("assets/svg/pointer.png") 20 20, pointer;
 }
 
 /* === TABLET === */
